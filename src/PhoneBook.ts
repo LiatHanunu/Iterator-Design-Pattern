@@ -16,7 +16,7 @@ class Phonebook implements IPhonebook {
     constructor() {
         this.book = [new Contact('', '', [''])]
     }
-    
+
 
     get size() { return this.book.length }//gets the amount of contacts
 
@@ -40,7 +40,7 @@ class Phonebook implements IPhonebook {
                 return wantedContacts
             }
         }
-    } 
+    }
 
 
     add(contact: Contact) {
@@ -68,12 +68,12 @@ class Phonebook implements IPhonebook {
 
     // nameContains(str:string){
     //     return new Iterator(this.book.filter((contact) => contact.name.includes(str)))
-        
+
     // }
-    
+
     nameContains(str: string): Iterable<Contact> {
         const filtered = this.book.filter((contact) => contact.name.includes(str))
-        return new Iterator(filtered)            
+        return new Iterator(filtered)
     }
 
     [Symbol.iterator]() {
@@ -81,7 +81,5 @@ class Phonebook implements IPhonebook {
     }
 }
 
-const b = new Phonebook()
-b.remove(-1)
-export default b
+export default new Phonebook()
 
